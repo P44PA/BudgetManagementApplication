@@ -179,7 +179,7 @@ const TableTransactions = ({ page, setPage, setIsAdded, isAdded }) => {
 
   const handleNoTransactions = useCallback(() => {
     if (transactionPeriod.length === 0 && periodIndex === 0 && search.length === 0) {
-      return "There are no transactions";
+      return "There are no transactions already";
     } else if (transactionPeriod.length === 0 && periodIndex === 1 && search.length === 0) {
       return "There are no transactions for today";
     } else if (transactionPeriod.length === 0 && periodIndex === 2 && search.length === 0) {
