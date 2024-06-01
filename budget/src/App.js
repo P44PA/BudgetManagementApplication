@@ -9,7 +9,10 @@ import Message from './components/message/Message';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
+
+
 function App() {
+
   const dataIncome = [
     { id: '1', title: 'Salary', category: 'Income', amount: 7890, date: '01-30-2023', type: 'plus' },
     { id: '2', title: 'Salary', category: 'Income', amount: 7890, date: '02-28-2023', type: 'plus' },
@@ -27,6 +30,7 @@ function App() {
   ]
 
   const dataExpense = [
+    {id: '200', title: 'Medicines', category: 'Healthcare', amount: 75, date: '01-25-2023', type: 'min'},
     { id: '201', title: 'Medicines', category: 'Healthcare', amount: 75, date: '01-25-2023', type: 'min' },
     { id: '202', title: 'Medicines', category: 'Healthcare', amount: 75, date: '02-25-2023', type: 'min' },
     { id: '203', title: 'Medicines', category: 'Healthcare', amount: 75, date: '03-25-2023', type: 'min' },
