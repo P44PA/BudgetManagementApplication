@@ -122,7 +122,7 @@ const Income = ({ isAdded, setIsAdded }) => {
                     <TextField
                         InputLabelProps={{ shrink: true }}
                         className='textfield'
-                        label="Date of Expense"
+                        label="Date of Income"
                         type='date'
                         value={date}
                         onChange={onDateChange}

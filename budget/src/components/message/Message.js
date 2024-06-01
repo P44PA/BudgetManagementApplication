@@ -2,13 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Message.css";
 import { useMediaQuery } from 'react-responsive';
-import { useDispatch } from 'react-redux';
-import { addDemoExpense, addDemoIncome } from '../../features/transaction/transactionSlice';
+// import { useDispatch } from 'react-redux';
+// import { addDemoExpense, addDemoIncome } from '../../features/transaction/transactionSlice';
 
 //MEssage alert { dataExpense, dataIncome }
 const Message = () => {
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const isDesktop = useMediaQuery({
     query: '(min-width: 768px)'
