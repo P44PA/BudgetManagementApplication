@@ -5,7 +5,7 @@
   --darkGreen: #f3e9ae;
   --black: #242d49;
   --gray: #788097;
-  --purple: #ae67cc;
+  --purple:#e6000f;
   --backgrnd-comp: #ffffff62;
   --text: #000;
   --pink: #FF919D;
@@ -30,10 +30,8 @@ body {
   flex-direction: column;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
-  background: linear-gradient(106.37deg,
-      #f3c6f1 29.63%,
-      #f29a9d 51.55%,
-      #f3c6f1 90.85%);
+  background:linear-gradient(0.2deg, rgb(51, 204, 255) 4.8%, rgb(51, 102, 255) 85.5%);
+  
 }
 
 .app-glass {

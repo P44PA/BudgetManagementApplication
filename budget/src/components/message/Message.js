@@ -2,13 +2,12 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import "./Message.css";
 import { useMediaQuery } from 'react-responsive';
-// import { useDispatch } from 'react-redux';
-// import { addDemoExpense, addDemoIncome } from '../../features/transaction/transactionSlice';
+import { useDispatch } from 'react-redux';
+import { addDemoExpense, addDemoIncome } from '../../features/transaction/transactionSlice';
 
-//MEssage alert { dataExpense, dataIncome }
-const Message = () => {
+const Message = ({ dataExpense, dataIncome }) => {
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const isDesktop = useMediaQuery({
     query: '(min-width: 768px)'
@@ -18,14 +17,14 @@ const Message = () => {
     query: '(max-width: 768px)'
   });
 
-  // const handleDemo = () => {
-  //   dispatch(addDemoExpense(dataExpense));
-  //   dispatch(addDemoIncome(dataIncome));
-  // }
+  const handleDemo = () => {
+    dispatch(addDemoExpense(dataExpense));
+    dispatch(addDemoIncome(dataIncome));
+  }
 
   const noShow = null;
   const [welcomeMessage, setWelcomeMessage] = useState
-    ("Welcome!👋")
+    ("Welcome! Click on the button below to see a demo of budgetManager 👋")
   const [welcomeMessageMobile, setWelcomeMessageMobile] = useState("Welcome")
   const [welcomeButtonMobile, setWelcomeButtonMobile] = useState
     (noShow)
@@ -36,7 +35,7 @@ const Message = () => {
       setWelcomeMessage("Welcome back on BudgetManager! 👋 ")
     } else {
       localStorage.setItem("hasVisited", "true")
-      setWelcomeMessageMobile("Welcome! 👋")
+      setWelcomeMessageMobile("Welcome! Click on the button below to see a demo of budgetManager 👋")
     }
   }, [])
 
@@ -46,7 +45,7 @@ const Message = () => {
       setWelcomeButtonMobile(noShow)
     } else {
       localStorage.setItem("hasVisited1", "true")
-      // setWelcomeButtonMobile(<button onClick={handleDemo} className="demo-btn mobile">Demo</button>)
+      setWelcomeButtonMobile(<button onClick={handleDemo} className="demo-btn mobile">Demo</button>)
     }
     // eslint-disable-next-line
   }, [])

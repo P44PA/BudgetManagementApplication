@@ -9,12 +9,9 @@ import {
   UilPlusCircle,
   UilMinusCircle,
 } from "@iconscout/react-unicons";
- //Demo Button Show
-// import { addDemoExpense, addDemoIncome, resetTransactions } from '../../features/transaction/transactionSlice';
-// import { UilArrowDown } from '@iconscout/react-unicons'
-
-import { resetTransactions } from '../../features/transaction/transactionSlice';
+import { addDemoExpense, addDemoIncome, resetTransactions } from '../../features/transaction/transactionSlice';
 import { useDispatch } from 'react-redux';
+import { UilArrowDown } from '@iconscout/react-unicons'
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ show, dataExpense, dataIncome, setPage }) => {
@@ -22,34 +19,32 @@ const Sidebar = ({ show, dataExpense, dataIncome, setPage }) => {
   const [expanded, setExpanded] = useState(false);
   const handleClick = () => setExpanded(!expanded);
   const dispatch = useDispatch();
+  const [demoArrow, setDemoArrow] = useState(<UilArrowDown className="arrow" />)
 
-  //Demo Button Show
-  // const [demoArrow, setDemoArrow] = useState(<UilArrowDown className="arrow" />)
+  const handleDemo = () => {
+    dispatch(addDemoExpense(dataExpense));
+    dispatch(addDemoIncome(dataIncome));
+    setPage(1)
+    setExpanded(false)
+    navigate("/")
+  }
 
-  // const handleDemo = () => {
-  //   dispatch(addDemoExpense(dataExpense));
-  //   dispatch(addDemoIncome(dataIncome));
-  //   setPage(1)
-  //   setExpanded(false)
-  //   navigate("/")
-  // }
-//Demo Button Show
-  // const [demoAlert, setDemoAlert] = useState(<button onClick={handleDemo} className="demo-btn alert">Demo</button>)
+  const [demoAlert, setDemoAlert] = useState(<button onClick={handleDemo} className="demo-btn alert">Demo</button>)
 
-  // useEffect(() => {
-  //   if (localStorage.getItem("firstVisit")) {
-  //     setDemoArrow(null)
-  //     setDemoAlert(buttonNormal)
-  //   } else {
-  //     localStorage.setItem("firstVisit", "true")
-  //   }
-  //   // eslint-disable-next-line
-  // }, [])
+  useEffect(() => {
+    if (localStorage.getItem("firstVisit")) {
+      setDemoArrow(null)
+      setDemoAlert(buttonNormal)
+    } else {
+      localStorage.setItem("firstVisit", "true")
+    }
+    // eslint-disable-next-line
+  }, [])
 
-  // const buttonNormal = (<button
-  //   onClick={handleDemo}
-  //   className="demo-btn">Demo
-  // </button>)
+  const buttonNormal = (<button
+    onClick={handleDemo}
+    className="demo-btn">Demo
+  </button>)
 
   const [afterWelcome, setAfterWelcome] = useState(true)
 
@@ -88,16 +83,15 @@ const Sidebar = ({ show, dataExpense, dataIncome, setPage }) => {
         </div>
 
         <div className="control-panel">
-        {/* Demo Button Show */}
-          {/* {show &&
+          {show &&
             <>
               {demoArrow}
               {demoAlert}
             </>
-          } */}
-          {/* {!afterWelcome &&
+          }
+          {!afterWelcome &&
             <>{buttonNormal}</>
-          } */}
+          }
           <button
             onClick={handleReset}
             className="reset-btn">Reset
