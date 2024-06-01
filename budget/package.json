@@ -1,7 +1,8 @@
 {
+  "homepage" : "https://P44PA.github.io/BudgetManagementApplication",
   "name": "budget-manager",
   "version": "0.1.0",
-  "homepage": "http://stephanieplomp.github.io/budget-manager-app",
+
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -11,7 +12,6 @@
     "@reduxjs/toolkit": "^1.9.1",
     "@svgr/webpack": "^8.0.1",
     "framer-motion": "^8.5.5",
-    "gh-pages": "^5.0.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,10 +23,10 @@
     "recharts": "^2.5.0",
     "redux": "^4.2.0"
   },
-  "devDependencies": { 
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
     "react-scripts": "5.0.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
